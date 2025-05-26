@@ -25,8 +25,6 @@ Bem-vindo ao **Screen Sound**, um programa em C# que permite registrar bandas, a
 
 ✅ Ver a média das notas de uma banda
 
-✅ Menu interativo com arte em ASCII
-
 ## 🛠️ Tecnologias Utilizadas
 
 C# (.NET)
