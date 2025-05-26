@@ -8,7 +8,6 @@ registredBands.Add("Foo Fighters", new List<int> { 10, 9, 8 });
 registredBands.Add("Oasis", new List<int> { 8, 0, 5 });
 registredBands.Add("KISS!", new List<int> { 10, 7, 4 });
 
-
 void ShowLogo()
 {
     Console.WriteLine(@"
@@ -43,7 +42,7 @@ void ShowMenuOptions()
         case 2:
             ShowBandList();
             break;
-        case 3: RreviewAband();
+        case 3: PreviewAband();
             break;
         case 4: ShowBandsAverage();
             break;
@@ -99,7 +98,7 @@ void ShowBandList()
     ShowMenuOptions();
 }
 
-void RreviewAband()
+void PreviewAband()
 {   
     Console.Clear();
     Console.WriteLine(@"
