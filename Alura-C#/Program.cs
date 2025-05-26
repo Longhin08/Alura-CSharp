@@ -43,7 +43,7 @@ void ShowMenuOptions()
         case 2:
             ShowBandList();
             break;
-        case 3:
+        case 3: RreviewAband;
             break;
         case 4:
             Console.WriteLine("You chose option: " + optionChosen);
