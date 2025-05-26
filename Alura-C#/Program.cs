@@ -43,7 +43,7 @@ void ShowMenuOptions()
         case 2:
             ShowBandList();
             break;
-        case 3: RreviewAband;
+        case 3: RreviewAband();
             break;
         case 4:
             Console.WriteLine("You chose option: " + optionChosen);
@@ -87,6 +87,7 @@ void ShowBandList()
     //    Console.WriteLine($"\nregistered bands: {bandList[i]}");
     //}
 
+    foreach(string banda in registredBands.Keys)
     {
         Console.WriteLine($"\nregistered bands: {banda}");
     }
@@ -112,10 +113,17 @@ void RreviewAband()
 
     if (registredBands.ContainsKey(bandName))
     {
-        Console.Write($"\r\nWhat rating would you like to give to: {bandName}?");
+        Console.Write($"\r\nWhat rating would you like to give to {bandName}?: ");
         int nota = int.Parse(Console.ReadLine()!);
 
         registredBands[bandName].Add(nota);
+        Console.WriteLine($"The rating: {nota}, was succesfully given to: {bandName}");
+        Thread.Sleep(2000);
+        Console.Write("\nPress any key to return to the Menu...");
+        Console.ReadKey();
+        Console.Clear();
+        ShowLogo();
+        ShowMenuOptions();
     }
     else
     {
@@ -127,8 +135,6 @@ void RreviewAband()
         ShowMenuOptions();
 
     }
-
-
 
 
 }
