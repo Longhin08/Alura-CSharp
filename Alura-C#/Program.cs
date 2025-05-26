@@ -44,7 +44,6 @@ void ShowMenuOptions()
             ShowBandList();
             break;
         case 3:
-            RreviewAband();
             break;
         case 4:
             Console.WriteLine("You chose option: " + optionChosen);
@@ -68,7 +67,6 @@ void RegisterBand()
 ▒█▄▄█ ▀░░▀ ▀░░▀ ▀▀▀░ 　 ▀░▀▀ ▀▀▀ ▀▀▀▀ ▀▀▀ ▀▀▀ ░░▀░░ ▀░▀▀ ▀░░▀ ░░▀░░ ▀▀▀ ▀▀▀▀ ▀░░▀");
     Console.Write("\nEnter the band name: ");
     string bandName = Console.ReadLine()!;
-    registredBands.Add(bandName, new List<int>());
     Console.WriteLine($"The band {bandName} was successfully registered");
     Thread.Sleep(2100);
     Console.Clear();
@@ -89,7 +87,6 @@ void ShowBandList()
     //    Console.WriteLine($"\nregistered bands: {bandList[i]}");
     //}
 
-    foreach (string banda in registredBands.Keys)
     {
         Console.WriteLine($"\nregistered bands: {banda}");
     }
