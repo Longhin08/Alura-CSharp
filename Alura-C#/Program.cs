@@ -45,8 +45,7 @@ void ShowMenuOptions()
             break;
         case 3: RreviewAband();
             break;
-        case 4:
-            Console.WriteLine("You chose option: " + optionChosen);
+        case 4: ShowBandsAverage();
             break;
         case -1:
             Console.WriteLine("You chose option: " + optionChosen);
@@ -118,7 +117,7 @@ void RreviewAband()
 
         registredBands[bandName].Add(nota);
         Console.WriteLine($"The rating: {nota}, was succesfully given to: {bandName}");
-        Thread.Sleep(2000);
+        Thread.Sleep(2500);
         Console.Write("\nPress any key to return to the Menu...");
         Console.ReadKey();
         Console.Clear();
@@ -134,6 +133,35 @@ void RreviewAband()
         ShowLogo();
         ShowMenuOptions();
 
+    }
+
+
+}
+
+void ShowBandsAverage()
+{
+    Console.Clear();
+    Console.WriteLine(@"
+▒█▀▀█ █▀▀█ █▀▀▄ █▀▀▄ █▀▀ 　 █▀▀█ █▀▀█ ▀▀█▀▀ ░▀░ █▀▀▄ █▀▀▀ 
+▒█▀▀▄ █▄▄█ █░░█ █░░█ ▀▀█ 　 █▄▄▀ █▄▄█ ░░█░░ ▀█▀ █░░█ █░▀█ 
+▒█▄▄█ ▀░░▀ ▀░░▀ ▀▀▀░ ▀▀▀ 　 ▀░▀▀ ▀░░▀ ░░▀░░ ▀▀▀ ▀░░▀ ▀▀▀▀");
+    Console.Write("Witch band would you like to know the avarage?: ");
+    string bandName = Console.ReadLine()!;
+
+    if (registredBands.ContainsKey(bandName))
+    {
+        List<int> bandRating = registredBands[bandName];
+        double avgRating = bandRating.Average();
+        Console.WriteLine($"The rating for {bandName} is :{avgRating}!");
+    }
+    else
+    {
+        Console.WriteLine($"\nThe band: {bandName} does not exist :´(");
+        Console.Write("\nPress any key to return to the Menu...");
+        Console.ReadKey();
+        Console.Clear();
+        ShowLogo();
+        ShowMenuOptions();
     }
 
 
