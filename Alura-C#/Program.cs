@@ -151,8 +151,14 @@ void ShowBandsAverage()
     if (registredBands.ContainsKey(bandName))
     {
         List<int> bandRating = registredBands[bandName];
-        double avgRating = bandRating.Average();
-        Console.WriteLine($"The rating for {bandName} is :{avgRating}!");
+        Thread.Sleep(2000);
+        Console.WriteLine($"The rating for {bandName} is: {bandRating.Average()}!");
+        Thread.Sleep(1000);
+        Console.Write("\nPress any key to return to the Menu...");
+        Console.ReadKey();
+        Console.Clear();
+        ShowLogo();
+        ShowMenuOptions();
     }
     else
     {
